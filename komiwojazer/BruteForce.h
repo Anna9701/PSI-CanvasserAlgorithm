@@ -1,11 +1,20 @@
+#ifndef _BRUTE_FORCE_H_
+#define _BRUTE_FORCE_H_
+
 #include <iostream>
-#include <map>
+#include "CanvasserAlgorithm.h"
+#include <algorithm>
 
 using namespace std;
 
-class BruteForce {
+class BruteForce : public CanvasserAlgorithm {
 	private:
-		map<int, int> nodes;
 	public:
-		BruteForce
+		BruteForce() : CanvasserAlgorithm() {
+
+		}
+		virtual double findShortestPath() override;
+        virtual ~BruteForce() {}
 };
+
+#endif

@@ -1,3 +1,6 @@
+#ifndef _NODE_H_
+#define _NODE_H_
+
 #include <iostream>
 #include <cmath>
 #include <ctime>
@@ -7,13 +10,16 @@ class Node {
 	private:
 		int x;
 		int y;
-		bool isVisited;
-		const int RANGE = 100;
+		bool visited;
+		int RANGE;
 	public:
 		Node();
-		double countDistance(Node);
+		//Node(int xx, int yy, int n) : x(xx), y(yy), RANGE(100) {}
+		double countDistance(const Node&);
 		void setVisited();
 		bool isVisited();
 		int getX();
 		int getY();
 };
+
+#endif

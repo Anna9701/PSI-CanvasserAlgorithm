@@ -1,31 +1,34 @@
 #include "Node.h"
 
 Node::Node() {
-	this.isVisited = false;
+    RANGE = 100;
+	this->visited = false;
 	srand(time(NULL));
-	this.x = rand() % RANGE;
-	this.y = rand() % RANGE;	
+	this->x = rand() % RANGE + 1;
+	this->y = rand() % RANGE + 1;
+    
 }
 
 bool Node::isVisited() {
-	return this.isVisited;
+	return this->visited;
 }
 
 void Node::setVisited() {
-	this.isVisited = true;
+	this->visited = true;
 }
 
 int Node::getX() {
-	return this.x;
+	return this->x;
 }
 
 int Node::getY() {
-	return this.y;
+	return this->y;
 }
 
-double Node::countDistance(Node target) {
+double Node::countDistance(const Node &target) {
 	double distance = 0;
-	distance = sqrt(pow(this.x - target.x, 2) + pow(this.y - target.y, 2));
+	distance = sqrt(pow(this->x - target.x, 2) + pow(this->y - target.y, 2));
 	
 	return distance;
 }
+
