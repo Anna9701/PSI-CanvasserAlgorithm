@@ -8,10 +8,12 @@ using namespace std;
 
 int main(int argc, char** argv) {
     BruteForce *alg = new BruteForce();
-    for(int i = 0; i < 2; ++i) {
+    for(int i = 0; i < 1000; ++i) {
         alg->addNode(Node());
     }
-    cout << alg->findShortestPath() << endl;
+    cout << "Distance: " << alg->findShortestPath() << endl;
+    cout << "Time: " << alg->getTime() << endl;
     getchar();
+    delete alg;
     return 0;
 }
