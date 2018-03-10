@@ -1,9 +1,0 @@
-[{
-  "directory": "/home/user/Documents/psi1/PSILaboratory",
-  "command": "/usr/bin/g++ -g -Wall -I. -I. -MG -MP -MT./Debug/komiwojazer_main.cpp.o -MF./Debug/komiwojazer_main.cpp.o.d -MM komiwojazer/main.cpp",
-  "file": "/home/user/Documents/psi1/PSILaboratory/komiwojazer/main.cpp"
- }, {
-  "directory": "/home/user/Documents/psi1/PSILaboratory",
-  "command": "/usr/bin/g++ -c /home/user/Documents/psi1/PSILaboratory/komiwojazer/main.cpp -g -Wall -o ./Debug/komiwojazer_main.cpp.o -I. -I.",
-  "file": "/home/user/Documents/psi1/PSILaboratory/komiwojazer/main.cpp"
- }]

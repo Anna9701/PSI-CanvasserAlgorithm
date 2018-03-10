@@ -30,3 +30,13 @@
 *.exe
 *.out
 *.app
+
+.codelite
+*.tags
+*.project
+*.workspace
+*.session
+*.json
+*.db
+
+
