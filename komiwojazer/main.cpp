@@ -7,13 +7,10 @@
 using namespace std;
 
 int main(int argc, char** argv) {
-	Node x;
-	Node y;
-    Node a;
 	BruteForce *alg = new BruteForce();
-	alg->addNode(x);
-	alg->addNode(y);
-    alg->addNode(a);
+    for(int i = 0; i < 2; ++i) {
+        alg->addNode(Node());
+    }
 	cout << alg->findShortestPath() << endl;
 	getchar();
 	return 0;

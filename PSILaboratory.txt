@@ -1,0 +1,1 @@
+./Debug/komiwojazer_BruteForce.cpp.o ./Debug/komiwojazer_NearestNeigbor.cpp.o ./Debug/komiwojazer_main.cpp.o ./Debug/komiwojazer_Node.cpp.o

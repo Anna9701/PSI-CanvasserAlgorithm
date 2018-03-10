@@ -12,31 +12,29 @@ double BruteForce::findShortestPath() {
         nodesResults.push_back(tmpResults);
     }
     
-    double min = 9999;
     double shortestDistance = 0;
-    int nodeWithWhoNumber;
-    int nodeWhosNumber;
-    for (unsigned int i = 0; i < nodes.size() - 1; ++i) {
-        try {
-            std::vector<double> distances = nodesResults.at(i);
-            for (unsigned int j = i + 2; j < distances.size(); ++j) {
-                if (distances.at(j) < min) {
-                    min = distances.at(j);
-                    nodeWithWhoNumber = j;
+    int nodeNumber;
+    while (nodesResults.size() > 0) {
+        double min = nodesResults.at(0).at(0);
+        for (unsigned int i = 0; i < nodesResults.size() - 1; ++i) {
+            try {
+                std::vector<double> distances = nodesResults.at(i);
+                for (unsigned int j = i + 1; j < distances.size(); ++j) {
+                    if (distances.at(j) < min) {
+                        min = distances.at(j);
+                        nodeNumber = i;
+                    }
                 }
+            } catch (exception &ex) {
+                std::cout << "Excetpion" << std::endl;
+                exit(EXIT_FAILURE);
             }
-        } catch (exception &ex) {
-            std::cout << "Excetpion" << std::endl;
         }
         shortestDistance += min;
-    }
-        
-      //  nodesResults.erase(nodesResults.begin() + i);
-      //  nodesResults.at(nodeWithWhoNumber).erase(nodesResults.at(nodeWithWhoNumber).begin() + nodeWithWhoNumber);
-    
+        nodesResults.erase(nodesResults.begin() + nodeNumber);
+    };
     
     return shortestDistance;
-    
 }
 /*
 double BruteForce::findShortestPath() {
