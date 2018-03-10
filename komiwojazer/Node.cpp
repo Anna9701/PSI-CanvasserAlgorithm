@@ -2,30 +2,28 @@
 
 Node::Node() {
     RANGE = 100;
-	this->visited = false;
-	this->x = rand() % RANGE + 1;
-	this->y = rand() % RANGE + 1;
+    this->visited = false;
+    this->x = rand() % RANGE + 1;
+    this->y = rand() % RANGE + 1;
 }
 
 bool Node::isVisited() {
-	return this->visited;
+    return this->visited;
 }
 
 void Node::setVisited() {
-	this->visited = true;
+    this->visited = true;
 }
 
 int Node::getX() {
-	return this->x;
+    return this->x;
 }
 
 int Node::getY() {
-	return this->y;
+    return this->y;
 }
 
 double Node::countDistance(const Node &target) {
-	double distance = 0;
-	distance = sqrt(pow(this->x - target.x, 2) + pow(this->y - target.y, 2));
-	return distance;
+    return sqrt(pow(this->x - target.x, 2) + pow(this->y - target.y, 2));
 }
 

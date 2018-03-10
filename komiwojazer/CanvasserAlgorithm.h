@@ -7,20 +7,20 @@
 
 
 class CanvasserAlgorithm {
-	protected:
-		std::vector<Node> nodes;
-		double searchTime;
+protected:
+        std::vector<Node> nodes;
+        double searchTime;
 public:
-		void addNode(Node &);
+        void addNode(Node &);
         void addNode(Node *);
         void addNode(Node);
-		virtual double findShortestPath() = 0;
-		double getTime();
+        virtual double findShortestPath() = 0;
+        double getTime();
         virtual ~CanvasserAlgorithm() {}
 };
 
 inline void CanvasserAlgorithm::addNode(Node &node) {
-	nodes.push_back(node);
+    nodes.push_back(node);
 }
 
 inline void CanvasserAlgorithm::addNode(Node *node) {
@@ -32,7 +32,7 @@ inline void CanvasserAlgorithm::addNode(Node node) {
 }
 
 inline double CanvasserAlgorithm::getTime() {
-	return searchTime;
+    return searchTime;
 }
 
 #endif
