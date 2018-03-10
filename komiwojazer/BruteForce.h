@@ -11,16 +11,22 @@ using namespace std;
 
 class BruteForce : public CanvasserAlgorithm {
 private:
+    const string algorithmName = ("Brute Force");
     double countShortestDistance(vector<vector<double>> *);
     vector<vector<double>>* getDistancesMatrix();
 public:
-    BruteForce() : CanvasserAlgorithm() {
-        srand((int)time(NULL));
-    }
-    
+    BruteForce();
     virtual double findShortestPath() override;
-
+    string getAlgorithmName() override;
     virtual ~BruteForce() {}
 };
+
+inline BruteForce::BruteForce() : CanvasserAlgorithm() {
+    srand((int)time(NULL));
+}
+
+inline string BruteForce::getAlgorithmName() {
+    return algorithmName;
+}
 
 #endif

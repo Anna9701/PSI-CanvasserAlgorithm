@@ -11,7 +11,7 @@ class Node {
         int x;
         int y;
         bool visited;
-        int RANGE;
+        int RANGE = (100);
     public:
         Node();
         double countDistance(const Node&);

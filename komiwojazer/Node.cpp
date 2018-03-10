@@ -1,7 +1,6 @@
 #include "Node.h"
 
 Node::Node() {
-    RANGE = 100;
     this->visited = false;
     this->x = rand() % RANGE + 1;
     this->y = rand() % RANGE + 1;

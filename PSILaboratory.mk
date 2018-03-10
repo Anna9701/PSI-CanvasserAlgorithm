@@ -17,7 +17,7 @@ Date                   :=03/06/18
 CodeLitePath           :=/home/user/.codelite
 LinkerName             :=/usr/bin/g++
 SharedObjectLinkerName :=/usr/bin/g++ -shared -fPIC
-ObjectSuffix           :=.o
+ObjectSuffix           :=.o -pthread
 DependSuffix           :=.o.d
 PreprocessSuffix       :=.i
 DebugSwitch            :=-g 
@@ -50,7 +50,7 @@ LibPath                := $(LibraryPathSwitch). $(LibraryPathSwitch). $(LibraryP
 AR       := /usr/bin/ar rcu
 CXX      := /usr/bin/g++
 CC       := /usr/bin/gcc
-CXXFLAGS :=  -g -Wall $(Preprocessors)
+CXXFLAGS :=  -g -Wall -pthread -std=c++0x $(Preprocessors)
 CFLAGS   :=   $(Preprocessors)
 ASFLAGS  := 
 AS       := /usr/bin/as
