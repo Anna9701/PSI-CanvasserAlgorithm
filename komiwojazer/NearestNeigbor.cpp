@@ -9,9 +9,11 @@ double NearestNeighbor::findShortestPath() {
 
 double NearestNeighbor::countDistance() {
     unsigned int actualNode = 0;
+    const Node firstNode (nodes[0]);
     double distance;
+    Node x;
     while(nodes.size() > 1) {
-        Node x = nodes[actualNode];
+        x = nodes[actualNode];
         double minimum;
         int previousNode = actualNode;
         if (actualNode != 0) {
@@ -34,6 +36,6 @@ double NearestNeighbor::countDistance() {
         nodes.erase(nodes.begin() + previousNode);
         distance += minimum;
     }
-
+    distance += x.countDistance(firstNode);
     return distance;
 }

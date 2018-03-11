@@ -1,15 +1,13 @@
 #include "BruteForce.h"
 
 double BruteForce::findShortestPath() {
- //   std::vector<vector<double>> *nodesResults = getDistancesMatrix();
-    double distance = countHamiltonsTours();
-  //  delete nodesResults;
+    double distance = countHamiltonsTour();
     return distance;
 }
 
-double BruteForce::countHamiltonsTours() {
+double BruteForce::countHamiltonsTour() {
     shortestDistance = tourLength(nodes);
-   // std::copy(nodes.begin(), nodes.end(), shortestTour.begin());
+    shortestTour.assign(nodes.begin(), nodes.end());
     scramble(nodes.begin(), nodes.size());
     
     return shortestDistance;
@@ -49,6 +47,6 @@ void BruteForce::checkCombination() {
     double length = tourLength(nodes);
     if (length < shortestDistance) {
         shortestDistance = length;
-     //   std::copy(nodes.begin(), nodes.end(), shortestTour.begin());
+        shortestTour.assign(nodes.begin(), nodes.end());
     }
 }

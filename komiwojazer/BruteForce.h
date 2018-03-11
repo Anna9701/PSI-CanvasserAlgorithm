@@ -17,13 +17,11 @@ private:
     double shortestDistance = (0);
     const string algorithmName = ("Brute Force");
     
-    double countHamiltonsTours();
+    double countHamiltonsTour();
     double tourLength(vector<Node>);
     void cicruitPermutation(vector<Node>::iterator, unsigned int);
     void scramble(vector<Node>::iterator, unsigned int);
     void checkCombination();
-    double countShortestDistance(vector<vector<double>> *);
-    vector<vector<double>>* getDistancesMatrix();
 public:
     BruteForce() : CanvasserAlgorithm() {}
     virtual double findShortestPath() override;

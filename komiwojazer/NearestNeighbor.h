@@ -2,11 +2,6 @@
 #define __NEAREST_NEIGHBOR_H_
 
 #include "CanvasserAlgorithm.h"
-#include <chrono>
-
-using namespace std;
-using ns = chrono::seconds;
-using get_time = chrono::steady_clock;
 
 class NearestNeighbor : public CanvasserAlgorithm {
 private:
@@ -20,8 +15,6 @@ public:
     virtual ~NearestNeighbor() {}
 };
 
-inline string NearestNeighbor::getAlgorithmName() {
-    return algorithmName;
-}
+
 
 #endif
