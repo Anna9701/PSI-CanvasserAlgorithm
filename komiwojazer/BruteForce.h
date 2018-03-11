@@ -13,7 +13,15 @@ using get_time = chrono::steady_clock;
 
 class BruteForce : public CanvasserAlgorithm {
 private:
+    vector<Node> shortestTour;
+    double shortestDistance = (0);
     const string algorithmName = ("Brute Force");
+    
+    double countHamiltonsTours();
+    double tourLength(vector<Node>);
+    void cicruitPermutation(vector<Node>::iterator, unsigned int);
+    void scramble(vector<Node>::iterator, unsigned int);
+    void checkCombination();
     double countShortestDistance(vector<vector<double>> *);
     vector<vector<double>>* getDistancesMatrix();
 public:

@@ -1,39 +1,54 @@
 #include "BruteForce.h"
 
 double BruteForce::findShortestPath() {
-    std::vector<vector<double>> *nodesResults = getDistancesMatrix();
-    double distance = countShortestDistance(nodesResults);
-    delete nodesResults;
+ //   std::vector<vector<double>> *nodesResults = getDistancesMatrix();
+    double distance = countHamiltonsTours();
+  //  delete nodesResults;
     return distance;
 }
 
-vector<vector<double>>* BruteForce::getDistancesMatrix() {
-    std::vector<vector<double>> *nodesResults = new vector<vector<double>>();
-    for (unsigned int i = 0; i < nodes.size() - 1; ++i) {
-        std::vector<double> tmpResults;
-        for (unsigned int j = i + 1; j < nodes.size(); ++j) {
-            double distance = nodes[i].countDistance(nodes[j]);
-            tmpResults.push_back(distance);
-        }
-        nodesResults->push_back(tmpResults);
-    }
-    
-    return nodesResults;
-}
-
-double BruteForce::countShortestDistance(vector<vector<double>> *nodesResults) {
-    double shortestDistance = 0;
-    for (unsigned int i = 0; i < nodesResults->size(); ++i) {
-        std::vector<double> distances = (*nodesResults)[i];
-        double min = distances[0];
-        for (unsigned int j = 1; j < distances.size(); ++j) {
-            if (distances[j] < min) {
-                min = distances[j];
-            }
-        }
-        shortestDistance += min;
-    }
-
+double BruteForce::countHamiltonsTours() {
+    shortestDistance = tourLength(nodes);
+   // std::copy(nodes.begin(), nodes.end(), shortestTour.begin());
+    scramble(nodes.begin(), nodes.size());
     
     return shortestDistance;
+}
+
+double BruteForce::tourLength(vector<Node> nodes) {
+    double tmpDistance = 0;
+    for (unsigned int i = 0; i < nodes.size(); ++i) {
+        tmpDistance += nodes[i].countDistance(nodes[i+1]);
+    }
+    tmpDistance += nodes[nodes.size() - 1].countDistance(nodes[0]);
+
+    return tmpDistance;
+}
+
+void BruteForce::cicruitPermutation(vector<Node>::iterator pivot, unsigned int numberOfNodes) {
+    Node tmp = *pivot;
+    for (unsigned int i = 0; i < numberOfNodes - 1; ++i) {
+       *(pivot) = *(pivot + i);
+    }
+    *(pivot + numberOfNodes - 1) = tmp;
+}
+
+void BruteForce::scramble(vector<Node>::iterator pivot, unsigned int numberOfNodes) {
+    if (numberOfNodes <= 1) {
+        checkCombination();
+        return;
+    }
+    for (unsigned int i = 0; i < numberOfNodes; ++i) {
+        vector<Node>::iterator nextPivot = pivot + 1;
+        scramble(nextPivot, numberOfNodes - 1);
+        cicruitPermutation(pivot, numberOfNodes);
+    }
+} 
+
+void BruteForce::checkCombination() {
+    double length = tourLength(nodes);
+    if (length < shortestDistance) {
+        shortestDistance = length;
+     //   std::copy(nodes.begin(), nodes.end(), shortestTour.begin());
+    }
 }
