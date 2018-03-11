@@ -14,7 +14,6 @@ protected:
 public:
         CanvasserAlgorithm();
         void addNode(Node);
-        void addNode(Node *);
         virtual double findShortestPath() = 0;
         virtual std::string getAlgorithmName() = 0;
         double getTime();
@@ -28,11 +27,6 @@ inline CanvasserAlgorithm::CanvasserAlgorithm() {
 inline void CanvasserAlgorithm::addNode(Node node) {
     nodes.push_back(node);
 }
-
-inline void CanvasserAlgorithm::addNode(Node *node) {
-    nodes.push_back(*node);
-}
-
 
 inline double CanvasserAlgorithm::getTime() {
     return searchTime;
