@@ -3,11 +3,7 @@
 
 
 double NearestNeighbor::findShortestPath() {
-    auto start = get_time::now();
     double distance = countDistance();
-    auto finish = get_time::now();
-    auto elapsed = finish - start;
-    searchTime = chrono::duration_cast<ns>(elapsed).count();
     return distance;
 }
 

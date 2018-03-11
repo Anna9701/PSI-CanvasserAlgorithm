@@ -8,14 +8,16 @@
 using namespace std;
 
 void findPath(CanvasserAlgorithm *alg) {
+    auto begin = clock();
     cout << alg->getAlgorithmName() << ": Distance: " << alg->findShortestPath() << endl;
-    cout << "Time: " << alg->getTime() << endl;
+    auto end = clock();
+    cout << "Time: " << double(end - begin) / CLOCKS_PER_SEC << endl;
 }
 
 int main(int argc, char** argv) {
     BruteForce *algB = new BruteForce();
     NearestNeighbor *algN = new NearestNeighbor();
-    for(int i = 0; i < 2000; ++i) {
+    for(int i = 0; i < 10000; ++i) {
         Node temp;
         algB->addNode(temp);
         algN->addNode(temp);

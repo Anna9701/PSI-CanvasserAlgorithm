@@ -1,16 +1,9 @@
 #include "BruteForce.h"
 
-using ns = chrono::seconds;
-using get_time = chrono::steady_clock;
-
 double BruteForce::findShortestPath() {
     std::vector<vector<double>> *nodesResults = getDistancesMatrix();
-    auto start = get_time::now();
     double distance = countShortestDistance(nodesResults);
-    auto finish = get_time::now();
     delete nodesResults;
-    auto elapsed = finish - start;
-    searchTime = chrono::duration_cast<ns>(elapsed).count();
     return distance;
 }
 
@@ -30,7 +23,6 @@ vector<vector<double>>* BruteForce::getDistancesMatrix() {
 
 double BruteForce::countShortestDistance(vector<vector<double>> *nodesResults) {
     double shortestDistance = 0;
-    int nodeNumber;
     for (unsigned int i = 0; i < nodesResults->size(); ++i) {
         std::vector<double> distances = (*nodesResults)[i];
         double min = distances[0];
