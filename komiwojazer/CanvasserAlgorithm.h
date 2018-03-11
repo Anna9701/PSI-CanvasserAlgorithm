@@ -12,6 +12,7 @@ protected:
         std::vector<Node> nodes;
         double searchTime;
 public:
+        CanvasserAlgorithm();
         void addNode(Node);
         void addNode(Node *);
         virtual double findShortestPath() = 0;
@@ -19,6 +20,10 @@ public:
         double getTime();
         virtual ~CanvasserAlgorithm() {}
 };
+
+inline CanvasserAlgorithm::CanvasserAlgorithm() {
+    srand((int)time(NULL));
+}
 
 inline void CanvasserAlgorithm::addNode(Node node) {
     nodes.push_back(node);

@@ -3,7 +3,10 @@
 
 #include "CanvasserAlgorithm.h"
 #include <chrono>
+
 using namespace std;
+using ns = chrono::seconds;
+using get_time = chrono::steady_clock;
 
 class NearestNeighbor : public CanvasserAlgorithm {
 private:
@@ -12,8 +15,8 @@ private:
     double countDistance();
 public:
     NearestNeighbor() : CanvasserAlgorithm() {}
-    double findShortestPath() override;
-    string getAlgorithmName() override;
+    virtual double findShortestPath() override;
+    virtual string getAlgorithmName() override;
     virtual ~NearestNeighbor() {}
 };
 

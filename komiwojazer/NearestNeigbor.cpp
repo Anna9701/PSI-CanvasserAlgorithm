@@ -1,7 +1,6 @@
 #include "NearestNeighbor.h"
 
-using ns = chrono::seconds;
-using get_time = chrono::steady_clock;
+
 
 double NearestNeighbor::findShortestPath() {
     auto start = get_time::now();

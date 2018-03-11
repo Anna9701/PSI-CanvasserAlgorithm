@@ -8,6 +8,8 @@
 #include <chrono>
 
 using namespace std;
+using ns = chrono::seconds;
+using get_time = chrono::steady_clock;
 
 class BruteForce : public CanvasserAlgorithm {
 private:
@@ -15,15 +17,11 @@ private:
     double countShortestDistance(vector<vector<double>> *);
     vector<vector<double>>* getDistancesMatrix();
 public:
-    BruteForce();
+    BruteForce() : CanvasserAlgorithm() {}
     virtual double findShortestPath() override;
-    string getAlgorithmName() override;
+    virtual string getAlgorithmName() override;
     virtual ~BruteForce() {}
 };
-
-inline BruteForce::BruteForce() : CanvasserAlgorithm() {
-    srand((int)time(NULL));
-}
 
 inline string BruteForce::getAlgorithmName() {
     return algorithmName;
