@@ -32,13 +32,13 @@ double BruteForce::countShortestDistance(vector<vector<double>> *nodesResults) {
     double shortestDistance = 0;
     int nodeNumber;
     while (nodesResults->size() > 0) {
-        double min = nodesResults->at(0).at(0);
+        double min = (*nodesResults)[0][0];
         for (unsigned int i = 0; i < nodesResults->size() - 1; ++i) {
             try {
-                std::vector<double> distances = nodesResults->at(i);
+                std::vector<double> distances = (*nodesResults)[i];
                 for (unsigned int j = i + 1; j < distances.size(); ++j) {
-                    if (distances.at(j) < min) {
-                        min = distances.at(j);
+                    if (distances[j] < min) {
+                        min = distances[j];
                         nodeNumber = i;
                     }
                 }
