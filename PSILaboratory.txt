@@ -1,1 +1,0 @@
-./Debug/komiwojazer_BruteForce.cpp.o -pthread ./Debug/komiwojazer_NearestNeigbor.cpp.o -pthread ./Debug/komiwojazer_main.cpp.o -pthread ./Debug/komiwojazer_Node.cpp.o -pthread

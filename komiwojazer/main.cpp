@@ -17,7 +17,7 @@ void findPath(CanvasserAlgorithm *alg) {
 int main(int argc, char** argv) {
     BruteForce *algB = new BruteForce();
     NearestNeighbor *algN = new NearestNeighbor();
-    for(int i = 0; i < 13; ++i) {
+    for(int i = 0; i < 10; ++i) {
         Node temp;
         algB->addNode(temp);
         algN->addNode(temp);
